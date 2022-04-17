@@ -1,10 +1,14 @@
 import React from "react";
 import { MdSearch } from "react-icons/md";
-const Search = () => {
+const Search = ({ onSearch }) => {
   return (
     <div className="search">
       <MdSearch className="search-icon" size="1.3em" />
-      <input type="text" placeholder="Type to search..." />
+      <input
+        onChange={(e) => onSearch(e.target.value)}
+        type="text"
+        placeholder="Type to search..."
+      />
     </div>
   );
 };
